@@ -1,0 +1,6 @@
+node_modules
+node_modules_garbage
+.env
+.git
+output.zip
+bot.log

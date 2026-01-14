@@ -1,0 +1,56 @@
+# --- Dependencies ---
+node_modules/
+package-lock.json
+# (Hapus package-lock.json dari daftar ini jika kamu ingin versioning lockfile,
+# tapi biasanya node_modules wajib di-ignore)
+
+# --- Environment Variables (SANGAT PENTING) ---
+# Jangan pernah upload password/token!
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# --- Logs & Debugging ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+bot.log
+
+# --- Minecraft Bot Auth Cache ---
+# Cache login Microsoft agar tidak perlu login ulang manual,
+# tapi INI RAHASIA, jangan di-upload.
+nmp-cache/
+.minecraft_auth/
+msa-cache/
+auth-cache/
+
+# --- Generated Files (Screenshots & Assets) ---
+# Jika bot mengambil screenshot dan menyimpannya
+*.png
+*.jpg
+*.jpeg
+screenshots/
+captures/
+output.zip
+
+# --- IDE & Editor Settings ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Build & Dist (Jika nanti pakai TypeScript/Babel) ---
+dist/
+build/
+coverage/
+
+# --- Docker ---
+# Opsional, tergantung workflow kamu
+# docker-compose.override.yml

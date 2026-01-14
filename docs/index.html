@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Radix Documentation</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #0f0f13;
+            --surface: #1a1a20;
+            --text: #e0e0e0;
+            --code-bg: #25252b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--surface);
+            position: fixed;
+            top: 0; left: 0;
+            padding: 20px;
+            border-right: 1px solid #333;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 10px;
+            color: #888;
+            text-decoration: none;
+            transition: 0.2s;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            margin-left: 290px; /* Sidebar width + padding */
+            padding: 40px;
+            max-width: 800px;
+        }
+
+        h1, h2, h3 { color: white; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h1 { font-size: 2.5rem; color: var(--primary); border: none; }
+        
+        .card {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #ff79c6;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #f8f8f2;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .content { margin-left: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <a href="#" class="logo">⚡ Tesla Radix</a>
+        <a href="#intro" class="nav-item active">Pengenalan</a>
+        <a href="#install" class="nav-item">Instalasi</a>
+        <a href="#modules" class="nav-item">Sistem Modul</a>
+        <a href="#api" class="nav-item">Developer API</a>
+        <a href="#faq" class="nav-item">FAQ</a>
+    </nav>
+
+    <main class="content">
+        
+        <section id="intro">
+            <h1>Dokumentasi Tesla Radix</h1>
+            <p>Selamat datang di dokumentasi resmi <strong>Tesla Radix Bot v5.2</strong>. Sistem bot Minecraft paling canggih dengan arsitektur modular dan integrasi Telegram mendalam.</p>
+            
+            <div class="card">
+                <h3>🚀 Mengapa Tesla Radix?</h3>
+                <p>Berbeda dengan bot konvensional, Tesla Radix menggunakan pendekatan <strong>Event-Driven</strong>. Ia memiliki "otak" (Core) yang terpisah dari "kemampuan" (Modules), membuatnya sangat ringan, stabil, dan mudah dikembangkan.</p>
+            </div>
+        </section>
+
+        <section id="install">
+            <h2>📦 Instalasi Cepat</h2>
+            <p>Pastikan Anda sudah menginstall Node.js v18 ke atas.</p>
+            
+            <pre><code>git clone https://github.com/user/tesla-radix.git
+cd tesla-radix
+npm install
+npm start</code></pre>
+            
+            <p>Jangan lupa konfigurasi file <code>.env</code> Anda sebelum menjalankan.</p>
+        </section>
+
+        <section id="modules">
+            <h2>🧩 Sistem Modul</h2>
+            <p>Tesla Radix memuat kemampuan dari folder <code>src/modules/</code>. Berikut adalah modul standar yang tersedia:</p>
+            
+            <ul>
+                <li><strong>Gameplay Mod</strong>: Menangani <code>/mine</code>, <code>/build</code>, dan auto-farming.</li>
+                <li><strong>Radar Mod</strong>: Memindai entitas di sekitar bot (<code>/scan</code>).</li>
+                <li><strong>System Mod</strong>: Menangani UI menu Telegram dan Start/Stop engine.</li>
+                <li><strong>Moderasi Mod</strong>: Anti-link dan bad word filter.</li>
+            </ul>
+        </section>
+
+        <section id="api">
+            <h2>🛠️ Developer API</h2>
+            <p>Ingin membuat plugin sendiri? Cukup buat file <code>.mod.js</code> baru:</p>
+            
+            <pre><code>// src/modules/custom/myplugin.mod.js
+export const install = (bus, mcController) => {
+    
+    bus.registerCommand('hello', {
+        category: 'FUN',
+        description: 'Sapa bot',
+        requireEngine: false
+    }, async (ctx, services) => {
+        ctx.reply('Halo dunia!');
+    });
+
+};</code></pre>
+        </section>
+
+        <footer style="margin-top: 50px; color: #666; font-size: 0.9rem;">
+            &copy; 2026 Arifi Razzaq. Tesla Radix Project.
+        </footer>
+
+    </main>
+
+    <script>
+        // Script sederhana untuk highlight menu aktif saat scroll
+        const links = document.querySelectorAll('.nav-item');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

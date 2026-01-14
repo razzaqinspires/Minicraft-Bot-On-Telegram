@@ -1,19 +1,19 @@
-# ⚡ Tesla Radix Bot v5.2
+# ⚡ Minecraft Bot On Telegram Bot v5.2
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Version](https://img.shields.io/badge/version-5.2.0-blue)
 ![Architecture](https://img.shields.io/badge/architecture-Modular%20Event%20Bus-orange)
 ![License](https://img.shields.io/badge/license-ISC-lightgrey)
 
-**Tesla Radix** adalah sistem bot Minecraft otonom berbasis Node.js yang menggunakan arsitektur *Neural Injection Modular*. Bot ini tidak hanya sekadar "diam dan menambang", tetapi memiliki kesadaran situasional, sistem moderasi, mini-games terintegrasi, dan kontrol panel Telegram yang dinamis.
+**Minecraft Bot On Telegram** adalah sistem bot Minecraft otonom berbasis Node.js yang menggunakan arsitektur *Neural Injection Modular*. Bot ini tidak hanya sekadar "diam dan menambang", tetapi memiliki kesadaran situasional, sistem moderasi, mini-games terintegrasi, dan kontrol panel Telegram yang dinamis.
 
-[📘 **BACA DOKUMENTASI LENGKAP**](https://username-github-kamu.github.io/nama-repo-kamu/)
+[📘 **BACA DOKUMENTASI LENGKAP**](https://razzaqinspires.github.io/Minicraft-Bot-On-Telegram/)
 
 ---
 
 ## 🧠 Arsitektur Sistem (The Neural Core)
 
-Tesla Radix menggunakan sistem **Event Bus** terpusat. Modul tidak saling ketergantungan secara langsung, melainkan "disuntikkan" (injected) saat runtime.
+Minecraft Bot On Telegram menggunakan sistem **Event Bus** terpusat. Modul tidak saling ketergantungan secara langsung, melainkan "disuntikkan" (injected) saat runtime.
 
 ```mermaid
 graph TD
@@ -43,7 +43,7 @@ graph TD
 
 ## 🆚 Perbandingan Kemampuan
 
-| Fitur | 🤖 Bot Biasa | ⚡ Tesla Radix v5.2 |
+| Fitur | 🤖 Bot Biasa | ⚡ Minecraft Bot On Telegram v5.2 |
 | --- | --- | --- |
 | **Arsitektur** | Spaghetti Code (Satu file `index.js`) | **Modular Event-Driven** (Terpisah & Rapi) |
 | **Kontrol Telegram** | Chat Command Kaku (`/help`) | **Dynamic UI Menu** (Tombol berubah sesuai status) |
